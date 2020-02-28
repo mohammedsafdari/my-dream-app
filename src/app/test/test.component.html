@@ -1,0 +1,32 @@
+<h1>Pipes</h1>
+{{ title | uppercase }}<br>
+{{ title | lowercase }}<br>
+{{ title | titlecase }}<br>
+{{ title | slice: 10:18 | titlecase}}<br>
+{{ myNum | number: '2.1-2' }}<br>
+{{ myNum | percent }}<br>
+{{ employee | json }}<br>
+{{ date | date: 'shortDate' }}<br>
+{{ date | date: 'shortTime' }}<br>
+{{ date | date: 'short' }}<br>
+{{ date | date: 'medium' }}<br>
+{{ date | date: 'long' }}<br>
+{{ myNum | currency: 'CAD': 'code'}}<br>    <!--Default USD and symbol-->
+{{ myNum | currency: 'CAD': 'symbol'}}<br>
+{{ myNum | currency: 'CAD': 'symbol-narrow'}}<br><br>
+
+<h2>Employee List [Custom Pipe]</h2>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Salary</th>
+        <th>Genders</th>
+    </tr>
+    <tr *ngFor= "let emp of employees">
+        <td>{{emp.empId}}</td>
+        <td>{{emp.empName | gender:emp.gender}}</td>
+        <td>{{emp.empSalary}}</td>
+        <td>{{emp.gender}}</td>
+    </tr>
+</table>

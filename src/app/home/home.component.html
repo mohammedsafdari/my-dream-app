@@ -1,0 +1,32 @@
+<h1><u>App Home</u></h1>
+<!-- {{ myProp }} -->
+<!-- {{ myFuction() }} -->
+
+<input type="text" value="{{myProp}}"/><br>  <!--String Interpolation-->
+
+<input type="text" [value]="myProp" /><br>   <!--Property Binding-->
+
+<input type="text" [(ngModel)] = "myProp"/><br>   <!--Two way data binding-->
+
+{{myProp}}<br>
+
+<input type="button" value="Click Me!" (click) = "myFuction()"/><br>  <!--Event Binding -->
+
+<!--Difference between string interpolation and property binding-->
+
+<button [disabled]="myBool" >Property Binding</button><br>   <!--Property Binding -->
+
+<button disabled={{myBool}} >String Interpolation</button><br>   <!--String Interpolation -->
+
+<!--where you have to use string expression use interpolation and when you are dealing with
+    non-string expression using property binding-->
+
+<ul>
+    <li *ngFor="let emp of empList">
+        {{emp.empId}}
+        {{emp.empName}}
+        {{emp.empSalary}}
+    </li>
+</ul>
+
+<hr>
